@@ -1,187 +1,252 @@
 <!DOCTYPE html>
-<html lang="fa">
+<!--
+╔══════════════════════════════════════════════════════╗
+║     Cube — Social Network  |  BETA v0.2                ║
+║     © 2025 Cube. All Rights Reserved.          ║
+║     Unauthorized copying is strictly prohibited.    ║
+╚══════════════════════════════════════════════════════╝
+-->
+<html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SHIRAZ RP - منوی اصلی</title>
-  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;900&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Vazirmatn', sans-serif;
-      direction: rtl;
-      background: url(https://uploadkon.ir/uploads/058206_25rockstar-wallpaper.jpeg) no-repeat center center fixed;
-      background-size: cover;
-      color: #fff;
-    }
-    .overlay {
-      background: rgba(0, 0, 0, 0.6);
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      z-index: 0;
-    }
-    .container {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-      padding: 80px 20px 120px;
-    }
-    h1.title {
-      font-size: 64px;
-      font-weight: 900;
-      margin-bottom: 60px;
-      color: #f39c12;
-      text-shadow: 0 0 10px #000;
-      animation: fadeInDown 1.2s ease;
-    }
-    .menu {
-      display: flex;
-      flex-direction: column;
-      gap: 25px;
-      align-items: center;
-      animation: fadeInUp 1.5s ease;
-    }
-    .menu button {
-      font-size: 24px;
-      padding: 16px 30px;
-      border: none;
-      border-radius: 35px;
-      background-color: #f39c12;
-      color: #111;
-      font-weight: 800;
-      cursor: pointer;
-      width: 300px;
-      box-shadow: 0 0 25px #f39c12;
-      transition: all 0.3s ease;
-    }
-    .menu button:hover {
-      background-color: #ffcc33;
-      box-shadow: 0 0 40px #ffcc33;
-    }
-    .content {
-      display: none;
-      max-width: 800px;
-      margin: 60px auto 0;
-      background: rgba(0, 0, 0, 0.75);
-      padding: 35px;
-      border-radius: 20px;
-      box-shadow: 0 0 30px rgba(243, 156, 18, 0.5);
-      animation: fadeIn 1s ease;
-    }
-    .content.active {
-      display: block;
-    }
-    h2 {
-      color: #f39c12;
-      font-size: 28px;
-      margin-bottom: 20px;
-    }
-    p, li {
-      font-size: 18px;
-      line-height: 1.8;
-      color: #eee;
-      text-align: justify;
-    }
-    ul {
-      padding-right: 20px;
-    }
-    iframe {
-      width: 100%;
-      height: 300px;
-      border: none;
-      margin-top: 20px;
-      border-radius: 15px;
-      box-shadow: 0 0 20px #f39c12;
-    }
-    footer {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      background: rgba(0,0,0,0.35);
-      color: white;
-      font-size: 14px;
-      padding: 12px 0;
-      text-align: center;
-      backdrop-filter: blur(4px);
-      font-family: 'Vazirmatn', sans-serif;
-      z-index: 2;
-    }
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-  </style>
-</head>
-<body>
-  <div class="overlay"></div>
-  <div class="container">
-    <h1 class="title">VI RP</h1>
-    <div class="menu">
-      <button onclick="showContent('about')">معرفی بازی و کانال</button>
-      <button onclick="showContent('panel')">پنل کاربری</button>
-      <button onclick="showContent('tutorial')">آموزش ورود</button>
-      <button onclick="showContent('shop')">فروشگاه</button>
-    </div>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Cube — شبکه اجتماعی</title>
+<style>
+:root{
+  --bg:#0a0a0f;--bg2:#111118;--bg3:#1a1a24;--bg4:#22222f;
+  --border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.13);
+  --accent:#7c3aed;--accent2:#6d28d9;--accent3:#8b5cf6;
+  --blue:#3b82f6;--gold:#f59e0b;--green:#10b981;--red:#ef4444;--orange:#f97316;
+  --text:#e2e8f0;--text2:#94a3b8;--text3:#475569;
+  --r:12px;--r2:20px;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+html,body{width:100%;min-height:100%;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Tahoma,sans-serif;font-size:15px;overflow-x:hidden;}
+::-webkit-scrollbar{width:5px;}::-webkit-scrollbar-track{background:transparent;}::-webkit-scrollbar-thumb{background:var(--bg4);border-radius:3px;}
+button{cursor:pointer;font-family:inherit;}
+input,textarea,select{font-family:inherit;}
 
-    <div id="about" class="content">
-      <h2>معرفی بازی و کانال</h2>
-      <p>کانال روبیکا <strong>@ProtectorOfShiraz</strong> با تلاش و پشتکار بی‌وقفه، یکی از بهترین منابع برای طرفداران بازی Los Angeles Crimes است.
-        در این کانال شما می‌توانید آموزش‌ها، نکات کلیدی، و اخبار جدید بازی را به‌صورت اختصاصی دریافت کنید. با عضویت در این کانال، همواره به‌روز باشید و به جمع علاقه‌مندان حرفه‌ای بازی بپیوندید.
-        همچنین تعامل نزدیک با اعضا و پشتیبانی سریع از ویژگی‌های برجسته این کانال است.</p>
-      <ul>
-        <li>شبیه‌سازی واقع‌گرایانه‌ی خیابان‌های لس آنجلس</li>
-        <li>گرافیک جذاب و طراحی دقیق محیط بازی</li>
-        <li>امکانات گسترده برای نقش‌آفرینی و تعامل با بازیکنان</li>
-        <li>گیم‌پلی هیجان‌انگیز و چالش‌برانگیز</li>
-        <li>پشتیبانی از بروزرسانی‌های مکرر و محتوای جدید</li>
-      </ul>
-    </div>
+/* ── SCREENS ── */
+.screen{display:none;min-height:100vh;}
+.screen.active{display:block;}
 
-    <div id="panel" class="content">
-      <h2>پنل کاربری</h2>
-      <p>برای پیگیری مشکلات یا ارتباط مستقیم با پشتیبانی، روی لینک زیر کلیک کرده و مشخصات خود را وارد کنید:</p>
-      <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSf-p-ch79vsHz1utrPE_offBuQagE0AF2yqyLV2BR_sSoeB_A/viewform" target="_blank" style="color:#f39c12; font-weight: bold;">فرم ورود به پنل</a></p>
-    </div>
+/* ── AUTH ── */
+#auth-screen{background:radial-gradient(ellipse at 60% 20%,#1a0a2e 0%,#0a0a0f 60%);display:flex;align-items:center;justify-content:center;padding:20px;min-height:100vh;}
+#auth-screen.active{display:flex;}
+.auth-box{width:100%;max-width:420px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r2);padding:36px 32px;box-shadow:0 30px 80px rgba(0,0,0,.7);}
+.auth-logo{text-align:center;margin-bottom:28px;}
+.logo-n{font-size:56px;font-weight:900;background:linear-gradient(135deg,var(--accent3),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;}
+.auth-logo p{color:var(--text2);font-size:13px;margin-top:5px;letter-spacing:.5px;}
+.auth-tabs{display:flex;background:var(--bg3);border-radius:10px;padding:4px;margin-bottom:22px;gap:3px;}
+.auth-tab{flex:1;padding:9px;border:none;background:transparent;color:var(--text2);border-radius:8px;font-size:14px;font-weight:500;transition:all .2s;}
+.auth-tab.active{background:var(--accent);color:#fff;box-shadow:0 4px 14px rgba(124,58,237,.4);}
+.fg{margin-bottom:13px;}
+.fg label{display:block;font-size:11px;color:var(--text2);margin-bottom:5px;font-weight:600;letter-spacing:.3px;text-transform:uppercase;}
+.fg input,.fg select{width:100%;background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:11px 14px;color:var(--text);font-size:14px;outline:none;transition:border-color .2s;}
+.fg input:focus,.fg select:focus{border-color:var(--accent);}
+.fg input::placeholder{color:var(--text3);}
+.auth-btn{width:100%;padding:13px;background:linear-gradient(135deg,var(--accent),var(--accent2));border:none;border-radius:12px;color:#fff;font-size:15px;font-weight:700;transition:all .2s;box-shadow:0 4px 16px rgba(124,58,237,.4);}
+.auth-btn:hover{transform:translateY(-1px);box-shadow:0 6px 22px rgba(124,58,237,.5);}
+.auth-err{background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.3);border-radius:8px;padding:10px 14px;color:#ef4444;font-size:13px;margin-bottom:13px;display:none;}
+.auth-err.show{display:block;}
 
-    <div id="tutorial" class="content">
-      <h2>آموزش ورود به سرور</h2>
-      <iframe src="https://uploadkon.ir/uploads/416806_25XRecorder-20250606-02.mp4" allowfullscreen></iframe>
-      <ul style="margin-top: 25px;">
-        <li><strong>نام سرور:</strong> رمز وی آی</li>
-        <li><strong>رمز سرور:</strong> وی آی</li>
-      </ul>
-    </div>
+/* ── APP ── */
+#app-screen.active{display:flex;min-height:100vh;}
+#sidebar{width:256px;min-width:256px;background:var(--bg2);border-left:1px solid var(--border);position:fixed;right:0;top:0;bottom:0;display:flex;flex-direction:column;z-index:100;overflow-y:auto;}
+.sidebar-logo{padding:18px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;}
+.sidebar-logo .sln{font-size:26px;font-weight:900;background:linear-gradient(135deg,var(--accent3),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.sidebar-logo .beta-badge{font-size:10px;background:rgba(124,58,237,.2);color:var(--accent3);padding:2px 8px;border-radius:20px;border:1px solid rgba(124,58,237,.3);}
+.nav-sec{padding:10px 8px;}
+.nav-lbl{font-size:10px;color:var(--text3);font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 12px 6px;}
+.nav-item{display:flex;align-items:center;gap:11px;padding:10px 14px;border-radius:10px;cursor:pointer;transition:all .15s;color:var(--text2);font-size:14px;font-weight:500;position:relative;user-select:none;}
+.nav-item:hover{background:var(--bg3);color:var(--text);}
+.nav-item.active{background:rgba(124,58,237,.15);color:var(--accent3);}
+.ni-ico{font-size:17px;width:22px;text-align:center;}
+.ni-badge{position:absolute;left:12px;top:7px;background:var(--red);color:#fff;font-size:10px;font-weight:700;padding:1px 5px;border-radius:10px;min-width:17px;text-align:center;}
+.sidebar-user{margin-top:auto;padding:12px;border-top:1px solid var(--border);}
+.su-card{display:flex;align-items:center;gap:9px;padding:9px;border-radius:10px;cursor:pointer;transition:background .15s;}
+.su-card:hover{background:var(--bg3);}
+.su-av{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0;overflow:hidden;}
+.su-av img{width:100%;height:100%;object-fit:cover;border-radius:50%;}
+.su-info{flex:1;min-width:0;}
+.su-name{font-size:13px;font-weight:700;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.su-handle{font-size:11px;color:var(--text2);}
+#main-content{margin-right:256px;flex:1;min-width:0;}
+#topbar{position:sticky;top:0;background:rgba(10,10,15,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:0 20px;height:54px;display:flex;align-items:center;justify-content:space-between;z-index:90;}
+.topbar-title{font-size:17px;font-weight:800;}
+.topbar-actions{display:flex;gap:7px;}
+.tb-btn{background:transparent;border:1px solid var(--border2);color:var(--text2);padding:6px 13px;border-radius:20px;font-size:13px;transition:all .2s;}
+.tb-btn:hover{background:var(--bg3);color:var(--text);}
+.tb-btn.primary{background:var(--accent);color:#fff;border-color:transparent;}
+.tb-btn.primary:hover{background:var(--accent2);}
+.content-wrap{max-width:660px;margin:0 auto;padding:18px 14px;}
 
-    <div id="shop" class="content">
-      <h2>فروشگاه</h2>
-      <ul>
-        <li>خرید ۴۰۰۰ هزار پول : ۳۴ تومان</li>
-        <li>خرید ۱۱۶۰۰ سکه: ۵۰ تومان</li>
-        <li>خرید ۶۰۰ الماس: <em>ناموجود</em></li>
-        <li>خرید خانه‌ی شخصی: <em>ناموجود</em></li>
-        <li>خرید ماشین کینگ: ۴۵ تومان</li>
-        <li>خرید ماشین سوپرا: ۳۴ تومان</li>
-      </ul>
-    </div>
-  </div>
+/* ── LEVEL BADGE ── */
+.level-badge{position:relative;display:inline-flex;align-items:center;justify-content:center;}
+.level-badge .lv-num{position:absolute;left:-4px;bottom:-2px;background:#000;color:#fff;font-size:10px;font-weight:900;line-height:1;padding:1px 3px;border-radius:4px;border:1px solid rgba(255,255,255,.2);}
+.lv-ring{position:absolute;left:-6px;bottom:-6px;width:22px;height:11px;background:rgba(0,0,0,.8);border-radius:0 0 11px 11px;border:1px solid rgba(255,255,255,.15);border-top:none;display:flex;align-items:center;justify-content:center;}
+.lv-ring span{font-size:9px;font-weight:900;color:#fff;}
 
-  <footer>
-    تمامی حقوق این سایت متعلق به مالک <strong>چنل روبیکا SHIRAZ RPG</strong> می‌باشد. هرگونه کپی‌برداری ممنوع است.
-  </footer>
+/* ── TICK inline ── */
+.tick-inline{position:relative;cursor:pointer;display:inline-flex;align-items:center;}
+.tick-inline .tt{position:absolute;bottom:calc(100%+5px);left:50%;transform:translateX(-50%);background:var(--bg4);color:var(--text);font-size:11px;padding:4px 8px;border-radius:6px;white-space:nowrap;pointer-events:none;opacity:0;transition:opacity .2s;border:1px solid var(--border);z-index:300;}
+.tick-inline:hover .tt{opacity:1;}
+/* Premium badge image next to name */
+.premium-img{width:1.8em;height:1.8em;border-radius:50%;object-fit:cover;vertical-align:middle;margin-right:4px;margin-left:2px;display:inline-block;box-shadow:0 0 0 2px rgba(245,158,11,.5);}
 
-  <script>
-    function showContent(id) {
-      document.querySelectorAll('.content').forEach(el => el.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
-    }
-  </script>
-</body>
-</html>
+/* ── STORIES BAR ── */
+#stories-bar{padding:14px 18px;border-bottom:1px solid var(--border);display:flex;gap:11px;overflow-x:auto;scrollbar-width:none;}
+#stories-bar::-webkit-scrollbar{display:none;}
+.story-item{display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;flex-shrink:0;}
+.story-ring{width:58px;height:58px;border-radius:50%;padding:2px;background:linear-gradient(135deg,var(--accent3),var(--gold));}
+.story-ring.seen{background:var(--bg4);}
+.story-av{width:100%;height:100%;border-radius:50%;background:var(--bg3);border:2px solid var(--bg2);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;overflow:hidden;}
+.story-av img{width:100%;height:100%;object-fit:cover;border-radius:50%;}
+.story-name{font-size:11px;color:var(--text2);max-width:60px;text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+
+/* ── COMPOSER ── */
+.composer{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:15px;margin-bottom:14px;}
+.composer-top{display:flex;gap:11px;align-items:flex-start;}
+.comp-av{width:40px;height:40px;border-radius:50%;background:var(--bg3);display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:700;flex-shrink:0;overflow:hidden;}
+.comp-av img{width:100%;height:100%;object-fit:cover;border-radius:50%;}
+.comp-in{flex:1;}
+.comp-in textarea{width:100%;background:transparent;border:none;outline:none;resize:none;color:var(--text);font-size:15px;min-height:58px;line-height:1.5;}
+.comp-in textarea::placeholder{color:var(--text3);}
+.comp-actions{display:flex;align-items:center;gap:6px;margin-top:10px;padding-top:10px;border-top:1px solid var(--border);}
+.ca-btn{background:transparent;border:none;color:var(--text2);font-size:18px;padding:5px;border-radius:7px;transition:all .15s;}
+.ca-btn:hover{background:var(--bg3);color:var(--accent3);}
+.post-btn{margin-right:auto;background:var(--accent);color:#fff;border:none;padding:7px 18px;border-radius:20px;font-size:14px;font-weight:700;transition:all .2s;}
+.post-btn:hover{background:var(--accent2);}
+.char-count{font-size:11px;color:var(--text3);}
+.comp-media{display:flex;gap:7px;flex-wrap:wrap;margin-top:8px;}
+.cm-wrap{position:relative;display:inline-block;}
+.cm-img{width:80px;height:80px;border-radius:8px;object-fit:cover;}
+.cm-rm{position:absolute;top:-5px;right:-5px;background:var(--red);color:#fff;border:none;border-radius:50%;width:18px;height:18px;font-size:11px;display:flex;align-items:center;justify-content:center;}
+
+/* ── POSTS ── */
+.post{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);margin-bottom:11px;overflow:hidden;transition:border-color .15s;}
+.post:hover{border-color:var(--border2);}
+.post.pinned-post{border-color:rgba(245,158,11,.4);box-shadow:0 0 0 1px rgba(245,158,11,.15);}
+.post-header{display:flex;align-items:center;gap:9px;padding:13px 14px 9px;}
+.post-av{width:40px;height:40px;border-radius:50%;background:var(--bg3);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;flex-shrink:0;cursor:pointer;overflow:hidden;position:relative;}
+.post-av img{width:100%;height:100%;object-fit:cover;border-radius:50%;}
+.post-av .lv-ring{left:-3px;bottom:-3px;}
+.post-meta{flex:1;min-width:0;}
+.post-author{display:flex;align-items:center;gap:3px;font-weight:700;font-size:14px;cursor:pointer;flex-wrap:wrap;}
+.post-author:hover span:first-child{text-decoration:underline;}
+.post-handle{font-size:12px;color:var(--text2);}
+.post-time{font-size:11px;color:var(--text3);margin-right:auto;white-space:nowrap;}
+.post-menu-btn{background:transparent;border:none;color:var(--text3);font-size:18px;padding:3px;border-radius:5px;line-height:1;}
+.post-menu-btn:hover{background:var(--bg3);color:var(--text);}
+.post-content{padding:2px 14px 11px;}
+.post-text{font-size:14px;line-height:1.65;white-space:pre-wrap;word-break:break-word;}
+.post-media{margin-top:9px;}
+.post-media img,.post-media video{width:100%;border-radius:9px;max-height:420px;object-fit:cover;display:block;}
+.post-actions{display:flex;padding:4px 8px 9px;border-top:1px solid var(--border);}
+.pa-btn{display:flex;align-items:center;gap:4px;background:transparent;border:none;color:var(--text2);padding:7px 10px;border-radius:7px;font-size:12px;transition:all .15s;flex:1;justify-content:center;}
+.pa-btn:hover{background:var(--bg3);}
+.pa-btn.liked{color:var(--red);}
+.pa-btn.bookmarked{color:var(--gold);}
+.pa-icon{font-size:16px;}
+/* Pin label */
+.pin-label{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--gold);padding:5px 14px;border-bottom:1px solid rgba(245,158,11,.15);font-weight:600;}
+
+/* ── POLL ── */
+.poll-wrap{margin-top:10px;display:flex;flex-direction:column;gap:7px;}
+.poll-option{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:10px 14px;cursor:pointer;position:relative;overflow:hidden;transition:border-color .2s;}
+.poll-option:hover{border-color:var(--accent);}
+.poll-option.voted{border-color:var(--accent);background:rgba(124,58,237,.08);}
+.poll-bar{position:absolute;inset:0;background:rgba(124,58,237,.12);border-radius:10px;transform-origin:right;transition:width .5s ease;}
+.poll-text{position:relative;display:flex;justify-content:space-between;font-size:13px;}
+.poll-pct{color:var(--accent3);font-weight:700;}
+.poll-total{font-size:11px;color:var(--text3);margin-top:5px;}
+
+/* ── COMMENTS ── */
+.comments-section{border-top:1px solid var(--border);padding:10px 14px;}
+.comment-input-row{display:flex;gap:8px;align-items:flex-start;margin-bottom:10px;}
+.comment-av{width:30px;height:30px;border-radius:50%;background:var(--bg3);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;overflow:hidden;}
+.comment-av img{width:100%;height:100%;object-fit:cover;border-radius:50%;}
+.comment-iw{flex:1;background:var(--bg3);border-radius:18px;padding:7px 12px;display:flex;gap:7px;align-items:center;}
+.comment-iw input{flex:1;background:transparent;border:none;outline:none;color:var(--text);font-size:13px;}
+.comment-iw input::placeholder{color:var(--text3);}
+.csend{background:transparent;border:none;color:var(--accent3);font-size:15px;cursor:pointer;}
+.comment{display:flex;gap:7px;margin-bottom:9px;}
+.comment-body{flex:1;background:var(--bg3);border-radius:10px;padding:8px 10px;}
+.c-author-row{display:flex;align-items:center;gap:5px;margin-bottom:2px;}
+.c-author{font-size:12px;font-weight:700;cursor:pointer;}
+.c-time{font-size:10px;color:var(--text3);}
+.c-text{font-size:13px;color:var(--text2);line-height:1.5;}
+.c-acts{display:flex;gap:10px;margin-top:4px;}
+.c-act{background:transparent;border:none;color:var(--text3);font-size:11px;cursor:pointer;display:flex;align-items:center;gap:2px;}
+.c-act:hover{color:var(--text2);}
+.pinned-c{border-right:2px solid var(--gold);padding-right:6px;}
+.pinned-lbl{font-size:9px;color:var(--gold);font-weight:700;margin-bottom:2px;}
+.sticker-row{display:flex;flex-wrap:wrap;gap:4px;padding:6px 0;max-height:100px;overflow-y:auto;}
+.stk-btn{font-size:20px;background:transparent;border:none;cursor:pointer;padding:3px;border-radius:5px;}
+.stk-btn:hover{background:var(--bg4);}
+
+/* ── GIF ROW (level unlocks) ── */
+.gif-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px;}
+.gif-item{font-size:24px;cursor:pointer;padding:4px;border-radius:6px;border:1px solid var(--border);background:var(--bg3);}
+.gif-item:hover{border-color:var(--accent);}
+
+/* ── PROFILE ── */
+.profile-cover{height:200px;position:relative;background:linear-gradient(135deg,var(--bg4),var(--accent2));overflow:hidden;}
+.profile-cover img{width:100%;height:100%;object-fit:cover;}
+.profile-cover-edit{position:absolute;bottom:10px;left:10px;background:rgba(0,0,0,.65);color:#fff;border:none;border-radius:8px;padding:6px 12px;font-size:12px;cursor:pointer;backdrop-filter:blur(4px);}
+.profile-info{padding:0 18px 18px;background:var(--bg2);border-bottom:1px solid var(--border);}
+.profile-av-wrap{margin-top:-46px;margin-bottom:10px;position:relative;display:inline-block;}
+.profile-av{width:90px;height:90px;border-radius:50%;background:var(--bg3);border:4px solid var(--bg2);display:flex;align-items:center;justify-content:center;font-size:34px;font-weight:700;overflow:hidden;position:relative;}
+.profile-av img{width:100%;height:100%;object-fit:cover;}
+.profile-av-edit{position:absolute;inset:0;background:rgba(0,0,0,.5);border-radius:50%;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .2s;cursor:pointer;color:#fff;font-size:20px;}
+.profile-av-wrap:hover .profile-av-edit{opacity:1;}
+.profile-av-lv{position:absolute;bottom:-4px;left:-4px;background:#000;border:1px solid rgba(255,255,255,.2);border-radius:0 0 46px 46px;width:52px;height:26px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;color:#fff;}
+.pname-row{display:flex;align-items:center;gap:5px;flex-wrap:wrap;margin-top:4px;}
+.pname{font-size:20px;font-weight:800;}
+.phandle{font-size:14px;color:var(--text2);}
+.pbio{font-size:14px;color:var(--text2);line-height:1.6;margin:7px 0;}
+.pstats{display:flex;gap:18px;margin-top:10px;flex-wrap:wrap;}
+.pstat{cursor:pointer;text-align:center;}
+.pstat-n{font-size:16px;font-weight:800;}
+.pstat-l{font-size:12px;color:var(--text2);}
+.pacts{display:flex;gap:7px;margin-top:13px;flex-wrap:wrap;}
+.prof-btn{padding:8px 18px;border-radius:20px;font-size:13px;font-weight:700;border:1px solid var(--border2);background:transparent;color:var(--text);transition:all .2s;}
+.prof-btn:hover{background:var(--bg3);}
+.prof-btn.follow{background:var(--accent);color:#fff;border-color:transparent;}
+.profile-tabs{display:flex;background:var(--bg2);border-bottom:1px solid var(--border);}
+.ptab{flex:1;padding:13px;text-align:center;font-size:13px;font-weight:600;color:var(--text2);cursor:pointer;border-bottom:2px solid transparent;transition:all .2s;}
+.ptab.active{color:var(--accent3);border-bottom-color:var(--accent3);}
+
+/* ── WARNING BANNER ── */
+.warn-banner{background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.3);border-radius:10px;padding:10px 14px;margin-bottom:14px;display:flex;align-items:center;gap:10px;}
+.warn-icon{font-size:22px;}
+.warn-text{flex:1;font-size:13px;color:var(--red);line-height:1.5;}
+
+/* ── NOTIFICATIONS ── */
+.notif-item{display:flex;gap:10px;align-items:flex-start;padding:13px 18px;border-bottom:1px solid var(--border);cursor:pointer;transition:background .15s;}
+.notif-item:hover{background:var(--bg2);}
+.notif-item.unread{background:rgba(124,58,237,.05);}
+.notif-icon{font-size:18px;width:34px;height:34px;background:var(--bg3);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.notif-text{flex:1;font-size:13px;line-height:1.5;color:var(--text2);}
+.notif-text strong{color:var(--text);}
+.notif-time{font-size:11px;color:var(--text3);}
+
+/* ── DM ── */
+#dm-panel{display:flex;height:calc(100vh - 54px);}
+.dm-list{width:300px;border-left:1px solid var(--border);overflow-y:auto;background:var(--bg2);}
+.dm-item{display:flex;gap:9px;padding:13px 14px;cursor:pointer;border-bottom:1px solid var(--border);transition:background .15s;align-items:center;}
+.dm-item:hover,.dm-item.active{background:var(--bg3);}
+.dm-av{width:42px;height:42px;border-radius:50%;background:var(--bg3);display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:700;flex-shrink:0;overflow:hidden;}
+.dm-av img{width:100%;height:100%;object-fit:cover;border-radius:50%;}
+.dm-info{flex:1;min-width:0;}
+.dm-name{font-size:13px;font-weight:700;}
+.dm-last{font-size:12px;color:var(--text2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.dm-chat{flex:1;display:flex;flex-direction:column;}
+.dm-header{padding:13px 14px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:9px;background:var(--bg2);}
+.dm-msgs{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:9px;}
+.msg-row{display:flex;flex-direction:column;}
+.msg-row.mine{align-items:flex-start;}
+.msg-row.theirs{align-items:flex-end;}
+.msg-bubble{max-width:68%;padding:9px 13px;border-radius:16px;font-size:13px;line-height:1.5;}
+.msg-bubble.mine{background:var(--accent);color:#fff;border-bottom-left-radius:4px;}
+.msg-bubble.theirs{background:var(--bg3);color:var(-
